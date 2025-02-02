@@ -13,7 +13,7 @@
     <style>
       body {
         font-family: Arial, Helvetica, sans-serif;
-        background: #181818;
+        background: #ffffff;
         color: #efefef;
         font-size: 16px;
       }
@@ -388,12 +388,42 @@
         display: none;
       }
     </style>
+    
+    
   </head>
   <body>
+    <!-- Steps (before getting to this step, and at this step):
+    1. https://www.youtube.com/watch?v=Yij36tDGg5Q&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=2 to get to this step
+    2. Add d-none to classes 
+    3. Start building file from this point, utilize a reference so you can match your HTML to build it.
+    Start building raw HTML from scratch right here -->
+
+    <div class="container-fluid p-3"> 
+      <h1 class="text-center text-warning">
+        ESP32 CAM Image Recognition
+      </h1>
+      <hr>
+      <div class="row">
+        <!-- This is completely fullscreen -->
+        <!-- 
+        col-md-3: Defines a column that takes up 3 out of 12 parts of the width on medium-sized screens (≥768px).
+        col-lg-3: Defines a column that takes up 3 out of 12 parts of the width on large-sized screens (≥992px).
+        col-sm-12: Defines a column that takes up the full width (12 out of 12) on small-sized screens (≥576px). -->
+        <div class="col-md-3 col-lg-3 col-sm-12">
+          <div class="p3-3" style="border:1px dashed grey"></div>
+        </div>
+        <div class="col-md-9 col-lg-9 col-sm-12">
+          <div class="p3-3" style="border:1px dashed grey"></div>
+        </div>
+      </div>
+      
+    </div>
+
+    
     
     <section class="main">
       <div id="logo">
-        <label for="nav-toggle-cb" id="nav-toggle"
+        <label for="nav-toggle-cb" id="nav-toggle" class='d-none'
           >&#9776;&nbsp;&nbsp;Toggle OV2640 settings</label
         >
       </div>
@@ -402,7 +432,7 @@
           <input type="checkbox" id="nav-toggle-cb" checked="checked" />
           <nav id="menu">
             <section id="xclk-section" class="nothidden">
-              <div class="input-group" id="set-xclk-group">
+              <div class="input-group d-none" id="set-xclk-group">
                 <label for="set-xclk">XCLK MHz</label>
                 <div class="text">
                   <input
@@ -418,7 +448,7 @@
               </div>
             </section>
 
-            <div class="input-group" id="framesize-group">
+            <div class="input-group d-none" id="framesize-group">
               <label for="framesize">Resolution</label>
               <select id="framesize" class="default-action">
                 <!-- 2MP -->
@@ -427,7 +457,7 @@
                 <option value="11">HD(1280x720)</option>
                 <option value="10">XGA(1024x768)</option>
                 <option value="9">SVGA(800x600)</option>
-                <option value="8">VGA(640x480)</option>
+                <option value="8" selected='selected'>VGA(640x480)</option>
                 <option value="7">HVGA(480x320)</option>
                 <option value="6">CIF(400x296)</option>
                 <option value="5">QVGA(320x240)</option>
@@ -490,7 +520,7 @@
               />
               <div class="range-max">2</div>
             </div>
-            <div class="input-group" id="special_effect-group">
+            <div class="input-group d-none" id="special_effect-group">
               <label for="special_effect">Special Effect</label>
               <select id="special_effect" class="default-action">
                 <option value="0" selected="selected">No Effect</option>
@@ -502,7 +532,7 @@
                 <option value="6">Sepia</option>
               </select>
             </div>
-            <div class="input-group" id="awb-group">
+            <div class="input-group d-none" id="awb-group">
               <label for="awb">AWB</label>
               <div class="switch">
                 <input
@@ -514,7 +544,7 @@
                 <label class="slider" for="awb"></label>
               </div>
             </div>
-            <div class="input-group" id="awb_gain-group">
+            <div class="input-group d-none" id="awb_gain-group">
               <label for="awb_gain">AWB Gain</label>
               <div class="switch">
                 <input
@@ -526,7 +556,7 @@
                 <label class="slider" for="awb_gain"></label>
               </div>
             </div>
-            <div class="input-group" id="wb_mode-group">
+            <div class="input-group d-none" id="wb_mode-group">
               <label for="wb_mode">WB Mode</label>
               <select id="wb_mode" class="default-action">
                 <option value="0" selected="selected">Auto</option>
@@ -536,7 +566,7 @@
                 <option value="4">Home</option>
               </select>
             </div>
-            <div class="input-group" id="aec-group">
+            <div class="input-group d-none" id="aec-group">
               <label for="aec">AEC SENSOR</label>
               <div class="switch">
                 <input
@@ -548,7 +578,7 @@
                 <label class="slider" for="aec"></label>
               </div>
             </div>
-            <div class="input-group" id="aec2-group">
+            <div class="input-group d-none" id="aec2-group">
               <label for="aec2">AEC DSP</label>
               <div class="switch">
                 <input
@@ -560,7 +590,7 @@
                 <label class="slider" for="aec2"></label>
               </div>
             </div>
-            <div class="input-group" id="ae_level-group">
+            <div class="input-group d-none" id="ae_level-group">
               <label for="ae_level">AE Level</label>
               <div class="range-min">-2</div>
               <input
@@ -573,7 +603,7 @@
               />
               <div class="range-max">2</div>
             </div>
-            <div class="input-group" id="aec_value-group">
+            <div class="input-group d-none" id="aec_value-group">
               <label for="aec_value">Exposure</label>
               <div class="range-min">0</div>
               <input
@@ -586,7 +616,7 @@
               />
               <div class="range-max">1200</div>
             </div>
-            <div class="input-group" id="agc-group">
+            <div class="input-group d-none" id="agc-group">
               <label for="agc">AGC</label>
               <div class="switch">
                 <input
@@ -611,7 +641,7 @@
               />
               <div class="range-max">31x</div>
             </div>
-            <div class="input-group" id="gainceiling-group">
+            <div class="input-group d-none" id="gainceiling-group">
               <label for="gainceiling">Gain Ceiling</label>
               <div class="range-min">2x</div>
               <input
@@ -624,14 +654,14 @@
               />
               <div class="range-max">128x</div>
             </div>
-            <div class="input-group" id="bpc-group">
+            <div class="input-group d-none" id="bpc-group">
               <label for="bpc">BPC</label>
               <div class="switch">
                 <input id="bpc" type="checkbox" class="default-action" />
                 <label class="slider" for="bpc"></label>
               </div>
             </div>
-            <div class="input-group" id="wpc-group">
+            <div class="input-group d-none" id="wpc-group">
               <label for="wpc">WPC</label>
               <div class="switch">
                 <input
@@ -643,7 +673,7 @@
                 <label class="slider" for="wpc"></label>
               </div>
             </div>
-            <div class="input-group" id="raw_gma-group">
+            <div class="input-group d-none" id="raw_gma-group">
               <label for="raw_gma">Raw GMA</label>
               <div class="switch">
                 <input
@@ -655,7 +685,7 @@
                 <label class="slider" for="raw_gma"></label>
               </div>
             </div>
-            <div class="input-group" id="lenc-group">
+            <div class="input-group d-none" id="lenc-group">
               <label for="lenc">Lens Correction</label>
               <div class="switch">
                 <input
@@ -667,7 +697,7 @@
                 <label class="slider" for="lenc"></label>
               </div>
             </div>
-            <div class="input-group" id="hmirror-group">
+            <div class="input-group d-none" id="hmirror-group">
               <label for="hmirror">H-Mirror</label>
               <div class="switch">
                 <input
@@ -679,7 +709,7 @@
                 <label class="slider" for="hmirror"></label>
               </div>
             </div>
-            <div class="input-group" id="vflip-group">
+            <div class="input-group d-none" id="vflip-group">
               <label for="vflip">V-Flip</label>
               <div class="switch">
                 <input
@@ -691,7 +721,7 @@
                 <label class="slider" for="vflip"></label>
               </div>
             </div>
-            <div class="input-group" id="dcw-group">
+            <div class="input-group d-none" id="dcw-group">
               <label for="dcw">DCW (Downsize EN)</label>
               <div class="switch">
                 <input
@@ -703,14 +733,14 @@
                 <label class="slider" for="dcw"></label>
               </div>
             </div>
-            <div class="input-group" id="colorbar-group">
+            <div class="input-group d-none" id="colorbar-group">
               <label for="colorbar">Color Bar</label>
               <div class="switch">
                 <input id="colorbar" type="checkbox" class="default-action" />
                 <label class="slider" for="colorbar"></label>
               </div>
             </div>
-            <div class="input-group" id="led-group">
+            <div class="input-group d-none" id="led-group">
               <label for="led_intensity">LED Intensity</label>
               <div class="range-min">0</div>
               <input
@@ -723,7 +753,7 @@
               />
               <div class="range-max">255</div>
             </div>
-            <div class="input-group" id="face_detect-group">
+            <div class="input-group d-none" id="face_detect-group">
               <label for="face_detect">Face Detection</label>
               <div class="switch">
                 <input
@@ -734,7 +764,7 @@
                 <label class="slider" for="face_detect"></label>
               </div>
             </div>
-            <div class="input-group" id="face_recognize-group">
+            <div class="input-group d-none" id="face_recognize-group">
               <label for="face_recognize">Face Recognition</label>
               <div class="switch">
                 <input
@@ -748,18 +778,18 @@
             <section id="buttons">
               <button id="get-still">Get Still</button>
               <button id="toggle-stream">Start Stream</button>
-              <button id="face_enroll" class="disabled" disabled="disabled">
+              <button id="face_enroll" class="disabled d-none" disabled="disabled">
                 Enroll Face
               </button>
             </section>
 
-            <div style="margin-top: 8px">
+            <div style="margin-top: 8px" class='d-none'>
               <center>
                 <span style="font-weight: bold">Advanced Settings</span>
               </center>
             </div>
-            <hr style="width: 100%" />
-            <label for="nav-toggle-reg" class="toggle-section-label"
+            <hr style="width: 100%" class='d-none' />
+            <label for="nav-toggle-reg" class="toggle-section-label d-none"
               >&#9776;&nbsp;&nbsp;Register Get/Set</label
             ><input
               type="checkbox"
@@ -803,7 +833,7 @@
                 </div>
                 <button class="inline-button" id="set-reg">Set</button>
               </div>
-              <hr style="width: 50%" />
+              <hr style="width: 50%" class='d-none'/>
               <!--h4>Get Register</h4-->
               <div class="input-group" id="get-reg-group">
                 <label for="get-reg">Reg, Mask</label>
@@ -836,8 +866,8 @@
                 </div>
               </div>
             </section>
-            <hr style="width: 100%" />
-            <label for="nav-toggle-2640pll" class="toggle-section-label"
+            <hr style="width: 100%" class='d-none'/>
+            <label for="nav-toggle-2640pll" class="toggle-section-label d-none"
               >&#9776;&nbsp;&nbsp;CLK</label
             ><input
               type="checkbox"
@@ -908,8 +938,8 @@
                 </div>
               </div>
             </section>
-            <hr style="width: 100%" />
-            <label for="nav-toggle-win" class="toggle-section-label"
+            <hr style="width: 100%" class='d-none'/>
+            <label for="nav-toggle-win" class="toggle-section-label d-none"
               >&#9776;&nbsp;&nbsp;Window</label
             ><input
               type="checkbox"
