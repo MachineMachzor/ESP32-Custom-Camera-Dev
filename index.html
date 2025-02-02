@@ -393,10 +393,25 @@
   </head>
   <body>
     <!-- Steps (before getting to this step, and at this step):
-    1. https://www.youtube.com/watch?v=Yij36tDGg5Q&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=2 to get to this step
+    1. Tut1: https://www.youtube.com/watch?v=Yij36tDGg5Q&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=2 to get to this step
     2. Add d-none to classes 
-    3. Start building file from this point, utilize a reference so you can match your HTML to build it.
-    Start building raw HTML from scratch right here -->
+    3. Tut2: https://www.youtube.com/watch?v=69B32Dcz4qU&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=4
+    4. Start building file from this point, utilize a reference so you can match your HTML to build it.
+    Start building raw HTML from scratch right here 
+    5. Tut3: https://www.youtube.com/watch?v=TKJQaliTu4k&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=5
+    Tut4: https://www.youtube.com/watch?v=atvLK5Jb8fM&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=7
+    Tut5: https://www.youtube.com/watch?v=FJkC0AoDIhA&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=8
+    Tut6: https://www.youtube.com/watch?v=6pN5PkUJ3F4&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=7
+    Tut7: https://www.youtube.com/watch?v=Iv8yirW0odg&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=11
+    Tut8: https://www.youtube.com/watch?v=TKvS360ZMys&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=9
+    Tut9??: https://www.youtube.com/watch?v=ACynusaursY&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=12
+    Tut10: https://www.youtube.com/watch?v=J9hZCGnLew0&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=13
+    Tut11??:
+    Tut12: https://www.youtube.com/watch?v=9i8a2iyhsf0&list=PLTWHVQHM9CjPcsjmgETkYI31xcGSF1eMg&index=15
+
+
+
+    -->
 
     <div class="container-fluid p-3"> 
       <h1 class="text-center text-warning">
@@ -410,10 +425,28 @@
         col-lg-3: Defines a column that takes up 3 out of 12 parts of the width on large-sized screens (≥992px).
         col-sm-12: Defines a column that takes up the full width (12 out of 12) on small-sized screens (≥576px). -->
         <div class="col-md-3 col-lg-3 col-sm-12">
-          <div class="p3-3" style="border:1px dashed grey"></div>
+          <div class="p3-3 mr-2" style="border:1px dashed grey">
+            <h5 class="text-center text-secondary"> ESP32 CAM Controls</h5>
+            <hr>
+            <button class="btn btn-primary btn-block" style="width: 100%">Start Stream</button>
+            <hr>
+            <h5 class="text-center text-secondary text-uppercase"> Image Recognition with URL</h5>
+            <input type="text" class="form-control form-control-lg mb-2" placeholder="Enter Image URL">
+            <button class="btn btn-success btn-block" style="width: 100%">Upload URL</button>
+            
+
+          </div>
         </div>
-        <div class="col-md-9 col-lg-9 col-sm-12">
+        <div class="col-md-9 col-lg-9 col-sm-12 mt-2">
           <div class="p3-3" style="border:1px dashed grey"></div>
+          <div class="card" style="width: 18rem;">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
         </div>
       </div>
       
