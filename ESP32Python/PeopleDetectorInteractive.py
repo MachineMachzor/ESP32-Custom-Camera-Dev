@@ -67,21 +67,24 @@ def firstFrame(video_path, output_image_path):
     # Release the video capture object
     cap.release()
 
-cap = cv2.VideoCapture(0) #0 is the webcam, 1 is for multiple webcams
-cap.set(3, 640) #Width, which is prop #3 Could also be 640 by 480, or 1280 by 720, just pick one
-cap.set(4, 480) #Height
+# cap = cv2.VideoCapture(0) #0 is the webcam, 1 is for multiple webcams
+# cap.set(3, 640) #Width, which is prop #3 Could also be 640 by 480, or 1280 by 720, just pick one
+# cap.set(4, 480) #Height
 
 # current_dir = os.getcwd() # Get the current working directory
 # video = r'C:\Users\ringk\OneDrive\Documents\Object-Detection-Course\Info\Videos\people.mp4'
 # firstFrame(video, os.path.join(current_dir, r"C:\Users\ringk\OneDrive\Documents\Object-Detection-Course\People Counter\first_frame.png"))
 # cap = cv2.VideoCapture(video)
 # vidDimensions(video)
-
+url = "http://192.168.0.84/cam-hi.jpg"
 while True:
-    success, img = cap.read()
-    if not success: #If cap is undefined, then we just break it immediately so we do not crash
-        print("Failed to read from the video")
-        break
+    img_resp = urllib.request.urlopen(url)
+    imgnp=np.array(bytearray(img_resp.read()),dtype=np.uint8)
+    img=cv2.imdecode(imgnp,-1)
+    # success, img = cap.read()
+    # if not success: #If cap is undefined, then we just break it immediately so we do not crash
+    #     print("Failed to read from the video")
+    #     break
     # imgRegion = cv2.bitwise_and(img, mask) #Masking the image
     
     # Importing within the while loop so the graphics dont get bad
@@ -177,7 +180,7 @@ while True:
     # cv2.waitKey(1) #1ms delay
 
 # Release the webcam and close windows
-cap.release()
+# cap.release()
 cv2.destroyAllWindows()
 
 
