@@ -1,0 +1,19 @@
+# Ignore node_modules and build artifacts in the ReactDjango folder
+ReactDjango/music_controller/frontend/node_modules/
+ReactDjango/music_controller/frontend/static/frontend/main.js
+ReactDjango/music_controller/frontend/static/frontend/main.js.LICENSE.txt
+ReactDjango/music_controller/frontend/build/
+
+# Ignore SQLite database file
+ReactDjango/music_controller/db.sqlite3
+
+# Ignore Python cache and temporary files
+ReactDjango/music_controller/__pycache__/
+ReactDjango/music_controller/**/*.pyc
+ReactDjango/music_controller/**/*.pyo
+ReactDjango/music_controller/**/*.pyd
+
+# Ignore Django migrations
+ReactDjango/music_controller/api/migrations/
+ReactDjango/music_controller/frontend/migrations/
+ReactDjango/music_controller/music_controller/migrations/
