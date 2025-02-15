@@ -18,7 +18,7 @@ const HomePage = () => {
             ESP32Cam
           </Typography>
         </div>
-        <div item xs={12} align="center">
+        {/* <div item xs={12} align="center">
           <ButtonGroup disableElevation variant="contained" color="primary">
             <Button color="primary" to="/join" component={Link}>
               Join a Room
@@ -27,7 +27,28 @@ const HomePage = () => {
               Create a Room
             </Button>
           </ButtonGroup>
-        </div>
+        </div> */}
+        <section id="buttons">
+          <button id="get-still">Get Still</button>
+          <button id="toggle-stream">Start Stream</button>
+        </section>
+        <figure>
+          <div id="stream-container" className="image-container hidden">
+            <a
+              id="save-still"
+              href="#"
+              className="button save"
+              download="capture.jpg"
+            >
+              Save
+            </a>
+            <div className="close" id="close-stream">
+              ×
+            </div>
+            <img id="stream" src="" />
+            {/* crossorigin */}
+          </div>
+        </figure>
       </div>
     );
   };

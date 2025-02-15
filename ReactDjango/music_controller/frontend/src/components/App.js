@@ -5,6 +5,7 @@ import RoomJoinPage from "./RoomJoinPage";
 import CreateRoomPage from "./CreateRoomPage";
 
 import { render } from "react-dom";
+import ReactDOM from "react-dom";
 
 export default class App extends Component {
   constructor(props) {
@@ -21,11 +22,13 @@ export default class App extends Component {
 }
 
 const appDiv = document.getElementById("app");
-if (appDiv) {
-  render(<App />, appDiv);
-} else {
-  console.error("App div not found!");
-}
+// render(<App />, appDiv);
+ReactDOM.render(<App />, appDiv);
+// if (appDiv) {
+//   render(<App />, appDiv);
+// } else {
+//   console.error("App div not found!");
+// }
 // render(<App />, appDiv);
 
 // Run code like:
