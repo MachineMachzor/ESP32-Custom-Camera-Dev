@@ -45,6 +45,11 @@ const HomePage = () => {
             <div className="close" id="close-stream">
               ×
             </div>
+            <img
+              id="stream"
+              src="http://127.0.0.1:5000/video_feed"
+              alt="Video Stream"
+            />
             <img id="stream" src="" />
             {/* crossorigin */}
           </div>
